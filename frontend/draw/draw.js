@@ -14,11 +14,17 @@ resizeCanvas();
 
 let drawing = false;
 
-canvas.addEventListener('mousedown', () => drawing = true);
+canvas.addEventListener('mousedown', (e) => {
+  drawing = true;
+  ctx.beginPath();
+  ctx.moveTo(e.clientX, e.clientY - canvas.getBoundingClientRect().top);
+});
+
 canvas.addEventListener('mouseup', () => drawing = false);
 canvas.addEventListener('mouseout', () => drawing = false);
 
 canvas.addEventListener('mousemove', draw);
+
 
 function draw(e) {
   if (!drawing) return;
@@ -29,9 +35,8 @@ function draw(e) {
 
   ctx.lineTo(e.clientX, e.clientY - canvas.getBoundingClientRect().top);
   ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(e.clientX, e.clientY - canvas.getBoundingClientRect().top);
 }
+
 
 clearBtn.addEventListener('click', () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
