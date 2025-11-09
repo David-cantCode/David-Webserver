@@ -6,7 +6,7 @@
   <title>My C Server — Apps</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* small additions to your current style */
+    
     nav { display:flex; gap:8px; padding:1rem; justify-content:center; }
     nav button { cursor:pointer; }
     .view { display:none; }
@@ -16,7 +16,7 @@
   </style>
 </head>
 <body>
-  <header>My C Server — Apps</header>
+  <header>David Web Server</header>
 
   <nav>
     <button data-app="home">Home</button>
@@ -27,8 +27,7 @@
   <main>
     <!-- Home / default view -->
     <section id="home" class="view active card">
-      <h2>Welcome</h2>
-      <p>Choose an app from the top — Terminal, About, etc.</p>
+      <h2>Hello world</h2>
     </section>
 
     <!-- Terminal view -->
@@ -39,14 +38,15 @@
       <p style="margin-top:.5rem; color:#666">Note: this executes commands on the server.</p>
     </section>
 
-    <!-- About or other simple app -->
+    <!-- About -->
     <section id="about" class="view card">
       <h2>About</h2>
-      <p>This is a small multi-app frontend served by your C server.</p>
+      <p>David Webserver</p>
     </section>
   </main>
 
-  <footer>Powered by C & Tailscale</footer>
+
+
 
   <script src="app.js"></script>
 </body>

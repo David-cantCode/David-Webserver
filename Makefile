@@ -2,7 +2,7 @@
 CC = gcc
 CFLAGS = -Wall -O2
 TARGET = server
-SRC = $(wildcard backend/*.c)
+SRC = $(shell find libary -type f -name "*.c")
 
 # Default target
 all: $(TARGET)
