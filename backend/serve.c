@@ -11,10 +11,14 @@
 
 
 void serve_file(int client_fd, const char *req_path) {
+    
 
     //get the full path of the file 
     char full_path[512];
     snprintf(full_path, sizeof(full_path), "%s%s", FRONTEND, req_path);
+
+    printf("Opening file: %s\n", full_path);
+
 
     //open file in read mode
     FILE *file = fopen(full_path, "r");
