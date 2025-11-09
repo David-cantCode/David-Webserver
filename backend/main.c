@@ -64,7 +64,7 @@ void handle_client(int client_fd) {
         strcpy(path, "/index.html");
     }
 
-    // ---- HANDLE WEB TERMINAL ----
+    // handle terminal
     if (strcmp(path, "/run") == 0 && strncmp(method, "POST", 4) == 0) {
         char *body = strstr(buffer, "\r\n\r\n");
         if (!body) {
