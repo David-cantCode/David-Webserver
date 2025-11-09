@@ -32,23 +32,26 @@ cmdInput.addEventListener('keydown', async (e) => {
   cmdInput.value = '';
 
   try {
-    // send command to /run
-  fetch("/run", {
+    // send command to /run and await response
+    const res = await fetch("/run", {
       method: "POST",
-      headers: { "Content-Type": "text/plain" },
-      body: "mysecret\n" + cmd
-  });
-
+      headers: { 
+        "Content-Type": "text/plain",
+        "X-Auth-Token": "mysecret" // match the server token
+      },
+      body: cmd
+    });
 
     if (!res.ok) {
-      const err = await res.text();
-      appendLine('[error] ' + (err || res.statusText));
+      const errText = await res.text();
+      appendLine('[error] ' + (errText || res.statusText));
       return;
     }
 
-    // receive full output as text (simple approach)
+    // receive command output
     const text = await res.text();
     appendLine(text.trim());
+
   } catch (err) {
     appendLine('[network] ' + err.message);
   }
