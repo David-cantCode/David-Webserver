@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>C Web Server</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>My C Server — Apps</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* small additions to your current style */
+    nav { display:flex; gap:8px; padding:1rem; justify-content:center; }
+    nav button { cursor:pointer; }
+    .view { display:none; }
+    .view.active { display:block; }
+    #terminal { background:#000; color:#0f0; padding:12px; border-radius:6px; font-family:monospace; height: 50vh; overflow:auto; }
+    #cmd { width:100%; padding:8px; background:#111; color:#0f0; border:1px solid #222; border-radius:4px; }
+  </style>
 </head>
 <body>
-    <h1>Hello world</h1>
-    
+  <header>My C Server — Apps</header>
+
+  <nav>
+    <button data-app="home">Home</button>
+    <button data-app="terminal">Terminal</button>
+    <button data-app="about">About</button>
+  </nav>
+
+  <main>
+    <!-- Home / default view -->
+    <section id="home" class="view active card">
+      <h2>Welcome</h2>
+      <p>Choose an app from the top — Terminal, About, etc.</p>
+    </section>
+
+    <!-- Terminal view -->
+    <section id="terminal-view" class="view card">
+      <h2>Web Terminal</h2>
+      <div id="terminal"><pre id="output"></pre></div>
+      <input id="cmd" placeholder="Type a command and press Enter" autocomplete="off" />
+      <p style="margin-top:.5rem; color:#666">Note: this executes commands on the server.</p>
+    </section>
+
+    <!-- About or other simple app -->
+    <section id="about" class="view card">
+      <h2>About</h2>
+      <p>This is a small multi-app frontend served by your C server.</p>
+    </section>
+  </main>
+
+  <footer>Powered by C & Tailscale</footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
