@@ -1,0 +1,12 @@
+
+#in terminal on server
+make
+./server
+
+
+
+
+#on laptop in browser
+
+http:// 
+^insert server ip (rever to tailscale ip)

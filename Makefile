@@ -2,7 +2,7 @@
 CC = gcc
 CFLAGS = -Wall -O2
 TARGET = server
-SRC = main.c
+SRC = main/main.c
 
 
 all: $(TARGET)
