@@ -2,16 +2,16 @@
 CC = gcc
 CFLAGS = -Wall -O2
 TARGET = server
-SRC = main/main.c
+SRC = $(wildcard backend/*.c)
 
-
+# Default target
 all: $(TARGET)
 
-# Compile main.c
+# Compile all .c files in /backend
 $(TARGET): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
 
-
+# Clean build files
 clean:
 	rm -f $(TARGET)
 
