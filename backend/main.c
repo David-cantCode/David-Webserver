@@ -64,13 +64,6 @@ void handle_client(int client_fd) {
 
     // ---- HANDLE WEB TERMINAL ----
     if (strcmp(path, "/run") == 0 && strncmp(method, "POST", 4) == 0) {
-        // Optional: simple token auth
-        const char *token = "password"; // change this
-        if (!strstr(buffer, token)) {
-            const char *unauth = "HTTP/1.1 403 Forbidden\r\nContent-Type: text/plain\r\n\r\nForbidden\n";
-            write(client_fd, unauth, strlen(unauth));
-            return;
-        }
 
         // Find start of POST body
         char *body = strstr(buffer, "\r\n\r\n");

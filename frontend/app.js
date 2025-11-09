@@ -37,7 +37,6 @@ cmdInput.addEventListener('keydown', async (e) => {
       method: "POST",
       headers: { 
         "Content-Type": "text/plain",
-        "X-Auth-Token": "mysecret" // match the server token
       },
       body: cmd
     });
