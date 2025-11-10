@@ -64,3 +64,18 @@ const clearHistory = document.getElementById('clearHistory');
 clearHistory.addEventListener('click', () => {
   historyEl.innerHTML = '';
 });
+
+// Keyboard input support
+document.addEventListener('keydown', (event) => {
+  const key = event.key;
+  if (/^[0-9+\-*/().^]$/.test(key)) {
+    appendKey(key);
+  } else if (key === 'Enter') {
+    appendKey('=');
+  } else if (key === 'Backspace') {
+    expression = expression.slice(0, -1);
+    expressionEl.textContent = expression;
+  } else if (key.toLowerCase() === 'c') {
+    appendKey('C');
+  }
+});
