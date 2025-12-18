@@ -1,7 +1,7 @@
 // CONFIGURATION
-const ROWS = 10;
-const COLS = 10;
-const MINES = 15;
+const ROWS = 16;
+const COLS = 16;
+const MINES = 40;
 
 let grid = [];
 let gameOver = false;
