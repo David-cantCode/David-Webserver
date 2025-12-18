@@ -3,10 +3,10 @@
 make
 ./server
 
-
+7
 
 
 #on laptop in browser
 
-http:// 
+http://(ip):8080
 ^insert server ip (rever to tailscale ip)

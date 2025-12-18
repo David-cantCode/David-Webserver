@@ -1,132 +1,97 @@
-:root {
-  --bg: #0f1724;
-  --panel: #111827;
-  --muted: #94a3b8;
-  --accent: #60a5fa;
-  --glass: rgba(255, 255, 255, 0.03);
-  --btn: #1f2937;
-  --btn-press: #374151;
-  --danger: #ef4444;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
+body {
   margin: 0;
-  background: linear-gradient(180deg, #071024 0%, #071b2b 100%);
-  color: #e6eef6;
-}
-
-.wrap {
-  min-height: 100vh;
+  background-color: #0e0e0e;
+  color: #f1f1f1;
+  font-family: 'Inter', system-ui, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px;
+  height: 100vh;
 }
 
 .calc {
-  width: 420px;
-  max-width: 95vw;
-  background: linear-gradient(180deg, var(--panel), #0b1220);
-  border-radius: 14px;
-  padding: 18px;
-  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: #111;
+  border-radius: 16px;
+  padding: 24px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
 }
 
 .display {
-  background: var(--glass);
-  border-radius: 10px;
-  padding: 14px;
+  text-align: right;
+  padding: 12px;
+  border-radius: 12px;
+  background: #181818;
+  font-size: 1.4rem;
+  min-height: 70px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-bottom: 12px;
-  min-height: 88px;
-}
-
-.top-line {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.expr {
-  font-size: 20px;
-  color: #cbd5e1;
-  word-wrap: break-word;
-  min-height: 28px;
+  justify-content: center;
+  overflow-wrap: anywhere;
 }
 
 .result {
-  font-size: 28px;
-  color: #fff;
-  text-align: right;
+  font-size: 1.8rem;
   font-weight: 600;
+  color: #fff;
 }
 
 .controls {
   display: flex;
-  gap: 8px;
-  margin-bottom: 10px;
+  justify-content: space-between;
+  gap: 6px;
 }
 
 .btn-toggle {
   flex: 1;
-  padding: 8px 10px;
+  border: none;
+  background: #181818;
+  color: #aaa;
   border-radius: 8px;
-  background: var(--btn);
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 8px;
   cursor: pointer;
-  color: var(--muted);
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .btn-toggle:hover {
-  background: var(--btn-press);
+  background: #222;
+  color: #fff;
 }
 
 .pad {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 8px;
+  gap: 6px;
 }
 
 button.key {
-  padding: 14px;
-  border-radius: 8px;
+  background: #181818;
   border: none;
-  background: linear-gradient(180deg, var(--btn), #0b1220);
-  color: #e6eef6;
-  font-size: 14px;
+  color: #f1f1f1;
+  font-size: 1rem;
+  padding: 16px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.1s ease-in-out;
+  transition: background 0.15s ease;
 }
 
-button.key:active {
-  transform: translateY(1px);
+button.key:hover {
+  background: #222;
 }
 
 button.op {
-  background: linear-gradient(180deg, #0b1224, #06202b);
-  color: var(--accent);
-  font-weight: 600;
+  color: #60a5fa;
 }
 
 button.special {
-  background: linear-gradient(180deg, #1e293b, #0b1620);
+  color: #facc15;
 }
 
 button.danger {
-  background: linear-gradient(180deg, #63171b, #3b0f13);
-  color: #ffeaea;
+  color: #ef4444;
 }
 
 .wide {
@@ -134,33 +99,24 @@ button.danger {
 }
 
 .history {
-  margin-top: 12px;
-  background: transparent;
-  padding: 8px;
-  border-radius: 8px;
-  max-height: 120px;
-  overflow: auto;
-  border: 1px dashed rgba(255, 255, 255, 0.02);
+  max-height: 100px;
+  overflow-y: auto;
+  font-size: 0.8rem;
+  color: #777;
+  border-top: 1px solid #222;
+  padding-top: 6px;
 }
 
-.history div {
-  font-size: 13px;
-  color: var(--muted);
-  padding: 6px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.01);
+::-webkit-scrollbar {
+  width: 4px;
 }
-
-.small {
-  font-size: 12px;
-  color: var(--muted);
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 2px;
 }
 
 @media (max-width: 480px) {
-  .pad {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
   .calc {
-    width: 100%;
+    width: 90%;
   }
 }
