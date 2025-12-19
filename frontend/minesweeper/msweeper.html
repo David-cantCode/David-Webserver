@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Minesweeper</title>
+    <title>Pro Minesweeper</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Minesweeper</h1>
-    <div id="status">Left-click: Reveal | Right-click: Flag</div>
-    
-    <div id="board"></div>
-    
-    <button id="reset-btn">New Game</button>
+    <div class="game-container">
+        <div class="header">
+            <div class="counter-box">
+                <span>💣</span>
+                <span id="mine-count">0</span>
+            </div>
+            <button id="reset-btn">🙂</button>
+        </div>
+        
+        <div id="grid"></div>
+        <div id="message"></div>
+    </div>
 
-    <script src="msweeper.html"></script>
+    <script src="msweeper.js"></script>
 </body>
 </html>

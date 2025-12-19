@@ -63,12 +63,8 @@ body {
 
 .pad {
   display: grid;
-<<<<<<< Updated upstream
   grid-template-columns: repeat(6, 1fr);
-=======
-  grid-template-columns: repeat(4, 1fr);
->>>>>>> Stashed changes
-  gap: 6px;
+  gap: 8px;
 }
 
 button.key {
